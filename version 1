@@ -1,14 +1,4 @@
-Feature:  open order point / URL / scan QR code, Then arrive at menu
-Verify URL contains restaurant address
-Arrive at restaurant menu
------------------------------
 
-Feature: translate menu
-Given: viewing restaurant menu
-Click translate in upper right corner
-Click a new language
-Verify all text translated into selected language
---------------------------------
 
 Feature: Customer views menu and adds items to cart
   Ensure customer can add items to cart after scanning QR code and viewing the menu
@@ -54,3 +44,17 @@ Ensure customer can see changed status
 
 Click check status
 Ensure status of at least one item is preparing or ready
+
+---------------------------------
+
+Feature:  open order point / URL / scan QR code, Then arrive at menu
+Verify URL contains restaurant address
+Arrive at restaurant menu
+-----------------------------
+
+Feature: translate menu
+Given: viewing restaurant menu
+Click translate in upper right corner
+Click a new language
+Verify all text translated into selected language
+--------------------------------
