@@ -1,0 +1,56 @@
+Feature:  open order point / URL / scan QR code, Then arrive at menu
+Verify URL contains restaurant address
+Arrive at restaurant menu
+-----------------------------
+
+Feature: translate menu
+Given: viewing restaurant menu
+Click translate in upper right corner
+Click a new language
+Verify all text translated into selected language
+--------------------------------
+
+Feature: Customer views menu and adds items to cart
+  Ensure customer can add items to cart after scanning QR code and viewing the menu
+
+  Scenario:  user should see menu and add items to cart after scanning QR code
+       Given user scans order point
+       When user selects menu items to order and presses + button
+        Then items are added to the cart (view cart and see items in the cart)
+---------------------------------
+
+Feature: Customer places order
+
+Scenario: user should tap or click the cart and then pay for order
+   Given user’s cart contains items
+   When user taps or clicks cart
+   Then the carts contents are displayed
+   When user taps the pay by credit card button
+   User is taken to credit card payment system
+   When user submits the sample credit card information
+   Then the order is completed and the user sees the receipt which accurately displays the restuarant and order information correctly.
+
+
+---------------------------
+
+
+Feature: Customer places order w unique message
+
+Scenario: user should tap or click the cart, add unique message and then pay for order
+   Given user’s cart contains items
+   When user taps or clicks cart
+   Then the carts contents are displayed
+   Then user clicks text area and adds text
+   When user taps the pay by credit card button
+   User is taken to credit card payment system
+   When user submits the sample credit card information
+   Then the order is completed and the user sees the receipt which accurately displays the restuarant and order information correctly.
+
+
+-----------------------------
+Given customer has placed order and is viewing their receipt (web page displays receipt) in the customer frontend
+Given android waiter has changed status of one of the items ordered
+Ensure customer can see changed status
+
+Click check status
+Ensure status of at least one item is preparing or ready
